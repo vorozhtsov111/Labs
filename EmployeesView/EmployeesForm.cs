@@ -40,7 +40,7 @@ namespace EmployeesView
         private void addButton_Click(object sender, System.EventArgs e)
         {
             // Создание экземпляра формы добавления
-            AddObjectForm aof = new AddObjectForm();
+            AddEmployeeForm aof = new AddEmployeeForm();
             // Если форма успешно отработала
             if (aof.ShowDialog() == DialogResult.OK)
                 // Добавление сотрудника

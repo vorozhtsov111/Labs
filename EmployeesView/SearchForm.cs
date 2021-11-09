@@ -4,16 +4,31 @@ using System.Windows.Forms;
 
 namespace EmployeesView
 {
+    /// <summary>
+    /// Форма поиска сотрудников
+    /// </summary>
     public partial class SearchForm : Form
     {
+        /// <summary>
+        /// Список сотрудников
+        /// </summary>
         private readonly BindingList<Employee> employees;
 
+        /// <summary>
+        /// Конструктор формы
+        /// </summary>
+        /// <param name="employees"></param>
         public SearchForm(BindingList<Employee> employees)
         {
             InitializeComponent();
             this.employees = employees;
         }
 
+        /// <summary>
+        /// Поиск сотрудников
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchButton_Click(object sender, System.EventArgs e)
         {
             BindingList<Employee> tmp = new BindingList<Employee>();

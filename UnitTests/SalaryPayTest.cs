@@ -111,6 +111,14 @@ namespace UnitTests
             SalaryEmployee e = new SalaryEmployee("Васильев А.Я.", "Менеджер", 29,
                 13552.1, 27, 23);
             Assert.AreEqual(11544.38, e.MonthSalary);
+            e.ActualDays = 22;
+            Assert.AreEqual(11042.45, e.MonthSalary);
+            e.WorkingDays = 22;
+            Assert.AreEqual(13552.1, e.MonthSalary);
+            e.Salary = 43552.12;
+            Assert.AreEqual(43552.12, e.MonthSalary);
+            e.ActualDays = 27;
+            Assert.AreEqual(53450.33, e.MonthSalary);
         }
     }
 }

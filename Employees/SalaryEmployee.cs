@@ -41,9 +41,9 @@ namespace Employees
             get { return workingDays; }
             set
             {
-                if (value < 0 || value > 31)
+                if (value < 1 || value > 31)
                     throw new ArgumentException(
-                        "Число рабочих дней в диапазоне [0-31]!");
+                        "Число рабочих дней в диапазоне [1-31]!");
                 workingDays = value;
             }
         }

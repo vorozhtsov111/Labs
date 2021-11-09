@@ -14,10 +14,10 @@ namespace UnitTests
                 () => new SalaryEmployee(null, "Менеджер", 29, 13552.1, 23, 23));
             Assert.AreEqual("Имя не может быть пустым значением!", ex.Message);
             ex = Assert.Throws<ArgumentException>(
-                () => new SalaryEmployee(null, "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("", "Менеджер", 29, 13552.1, 23, 23));
             Assert.AreEqual("Имя не может быть пустым значением!", ex.Message);
             Assert.DoesNotThrow(
-                () => new SalaryEmployee(null, "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
         }
 
         [Test]
@@ -55,26 +55,56 @@ namespace UnitTests
         public void SalaryTest()
         {
             var ex = Assert.Throws<ArgumentException>(
-                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, -13552.1, 23, 23));
             Assert.AreEqual("Оклад не может быть отрицательным!", ex.Message);
             ex = Assert.Throws<ArgumentException>(
-                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, -1045.34, 23, 23));
             Assert.AreEqual("Оклад не может быть отрицательным!", ex.Message);
             ex = Assert.Throws<ArgumentException>(
-                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, -9.124, 23, 23));
             Assert.AreEqual("Оклад не может быть отрицательным!", ex.Message);
             Assert.DoesNotThrow(
                 () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
             Assert.DoesNotThrow(
-                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 23));
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 5352.13, 23, 23));
         }
 
         [Test]
         public void WorkingDaysTest()
         {
-
+            var ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, -10, 23));
+            Assert.AreEqual("Число рабочих дней в диапазоне [1-31]!", ex.Message);
+            ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 45, 23));
+            Assert.AreEqual("Число рабочих дней в диапазоне [1-31]!", ex.Message);
+            ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 0, 23));
+            Assert.AreEqual("Число рабочих дней в диапазоне [1-31]!", ex.Message);
+            Assert.DoesNotThrow(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 22, 23));
+            Assert.DoesNotThrow(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 27, 23));
         }
-        
+
+        [Test]
+        public void ActualDaysTest()
+        {
+            var ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, -10));
+            Assert.AreEqual("Число отработанных дней в диапазоне [0-31]!", ex.Message);
+            ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, 45));
+            Assert.AreEqual("Число отработанных дней в диапазоне [0-31]!", ex.Message);
+            ex = Assert.Throws<ArgumentException>(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 23, -1));
+            Assert.AreEqual("Число отработанных дней в диапазоне [0-31]!", ex.Message);
+            Assert.DoesNotThrow(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 22, 23));
+            Assert.DoesNotThrow(
+                () => new SalaryEmployee("Васильев А.Я.", "Менеджер", 29, 13552.1, 27, 23));
+        }
+
         [Test]
         public void MonthSalaryTest()
         {

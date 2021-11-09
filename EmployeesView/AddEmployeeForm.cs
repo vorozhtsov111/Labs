@@ -8,7 +8,7 @@ namespace EmployeesView
     /// <summary>
     /// Форма добавления сотрудника
     /// </summary>
-    public partial class AddObjectForm : Form
+    public partial class AddEmployeeForm : Form
     {
         /// <summary>
         /// Добавляемый сотрудник
@@ -18,7 +18,7 @@ namespace EmployeesView
         /// <summary>
         /// Конструктор формы
         /// </summary>
-        public AddObjectForm()
+        public AddEmployeeForm()
         {
             InitializeComponent();
         }

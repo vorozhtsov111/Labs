@@ -40,7 +40,7 @@ namespace EmployeesView
             this.positionCheckBox = new System.Windows.Forms.CheckBox();
             this.ageCheckBox = new System.Windows.Forms.CheckBox();
             this.employeesGrid = new System.Windows.Forms.DataGridView();
-            this.okButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.baseLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).BeginInit();
@@ -52,7 +52,7 @@ namespace EmployeesView
             this.baseLayout.ColumnCount = 3;
             this.baseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.62791F));
             this.baseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.37209F));
-            this.baseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.baseLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.baseLayout.Controls.Add(this.positionBox, 1, 1);
             this.baseLayout.Controls.Add(this.nameLabel, 0, 0);
             this.baseLayout.Controls.Add(this.positionLabel, 0, 1);
@@ -76,7 +76,7 @@ namespace EmployeesView
             // 
             this.positionBox.Location = new System.Drawing.Point(98, 37);
             this.positionBox.Name = "positionBox";
-            this.positionBox.Size = new System.Drawing.Size(333, 22);
+            this.positionBox.Size = new System.Drawing.Size(331, 22);
             this.positionBox.TabIndex = 7;
             // 
             // nameLabel
@@ -132,15 +132,15 @@ namespace EmployeesView
             // 
             this.nameBox.Location = new System.Drawing.Point(98, 4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(333, 22);
+            this.nameBox.Size = new System.Drawing.Size(331, 22);
             this.nameBox.TabIndex = 6;
             // 
             // nameCheckBox
             // 
             this.nameCheckBox.AutoSize = true;
-            this.nameCheckBox.Location = new System.Drawing.Point(438, 4);
+            this.nameCheckBox.Location = new System.Drawing.Point(436, 4);
             this.nameCheckBox.Name = "nameCheckBox";
-            this.nameCheckBox.Size = new System.Drawing.Size(17, 21);
+            this.nameCheckBox.Size = new System.Drawing.Size(19, 21);
             this.nameCheckBox.TabIndex = 8;
             this.nameCheckBox.Text = "checkBox1";
             this.nameCheckBox.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@ namespace EmployeesView
             // positionCheckBox
             // 
             this.positionCheckBox.AutoSize = true;
-            this.positionCheckBox.Location = new System.Drawing.Point(438, 37);
+            this.positionCheckBox.Location = new System.Drawing.Point(436, 37);
             this.positionCheckBox.Name = "positionCheckBox";
-            this.positionCheckBox.Size = new System.Drawing.Size(17, 21);
+            this.positionCheckBox.Size = new System.Drawing.Size(19, 21);
             this.positionCheckBox.TabIndex = 9;
             this.positionCheckBox.Text = "checkBox2";
             this.positionCheckBox.UseVisualStyleBackColor = true;
@@ -158,9 +158,9 @@ namespace EmployeesView
             // ageCheckBox
             // 
             this.ageCheckBox.AutoSize = true;
-            this.ageCheckBox.Location = new System.Drawing.Point(438, 70);
+            this.ageCheckBox.Location = new System.Drawing.Point(436, 70);
             this.ageCheckBox.Name = "ageCheckBox";
-            this.ageCheckBox.Size = new System.Drawing.Size(17, 21);
+            this.ageCheckBox.Size = new System.Drawing.Size(19, 21);
             this.ageCheckBox.TabIndex = 10;
             this.ageCheckBox.Text = "checkBox3";
             this.ageCheckBox.UseVisualStyleBackColor = true;
@@ -180,22 +180,22 @@ namespace EmployeesView
             this.employeesGrid.Size = new System.Drawing.Size(603, 252);
             this.employeesGrid.TabIndex = 2;
             // 
-            // okButton
+            // searchButton
             // 
-            this.okButton.Location = new System.Drawing.Point(529, 80);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(86, 32);
-            this.okButton.TabIndex = 3;
-            this.okButton.Text = "Поиск";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.searchButton.Location = new System.Drawing.Point(529, 80);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(86, 32);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Поиск";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 389);
-            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.employeesGrid);
             this.Controls.Add(this.baseLayout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -223,6 +223,6 @@ namespace EmployeesView
         private System.Windows.Forms.CheckBox positionCheckBox;
         private System.Windows.Forms.CheckBox ageCheckBox;
         private System.Windows.Forms.DataGridView employeesGrid;
-        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button searchButton;
     }
 }

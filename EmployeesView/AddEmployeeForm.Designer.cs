@@ -1,7 +1,7 @@
 ﻿
 namespace EmployeesView
 {
-    partial class AddObjectForm
+    partial class AddEmployeeForm
     {
         /// <summary>
         /// Required designer variable.

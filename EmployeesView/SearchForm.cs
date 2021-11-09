@@ -14,7 +14,7 @@ namespace EmployeesView
             this.employees = employees;
         }
 
-        private void okButton_Click(object sender, System.EventArgs e)
+        private void searchButton_Click(object sender, System.EventArgs e)
         {
             BindingList<Employee> tmp = new BindingList<Employee>();
             foreach (Employee emp in employees)

@@ -108,21 +108,9 @@ namespace UnitTests
         [Test]
         public void MonthSalaryTest()
         {
-            RatePayEmployee e = new RatePayEmployee("Васильев А.Я.", "Менеджер", 29,
-                100, 1);
-            Assert.AreEqual(100, e.MonthSalary);
-            e.Salary = 0;
-            e.Rate = 1.3;
-            Assert.AreEqual(0, e.MonthSalary);
-            e.Salary = 42351.84;
-            e.Rate = 0;
-            Assert.AreEqual(0, e.MonthSalary);
-            e.Salary = 552.1;
-            e.Rate = 1.1;
-            Assert.AreEqual(607.31, e.MonthSalary);
-            e.Salary = 9212.43;
-            e.Rate = 0.75;
-            Assert.AreEqual(6909.32, e.MonthSalary);
+            SalaryEmployee e = new SalaryEmployee("Васильев А.Я.", "Менеджер", 29,
+                13552.1, 27, 23);
+            Assert.AreEqual(11544.38, e.MonthSalary);
         }
     }
 }

@@ -102,7 +102,7 @@ namespace Employees
         /// <returns>Зарплата</returns>
         public override double MonthSalary
         {
-            get { return Math.Round(salary * workingDays / actualDays, 2); }
+            get { return Math.Round(salary * actualDays / workingDays, 2); }
         }
 
         /// <summary>

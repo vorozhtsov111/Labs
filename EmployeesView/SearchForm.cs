@@ -34,16 +34,19 @@ namespace EmployeesView
             BindingList<Employee> tmp = new BindingList<Employee>();
             foreach (Employee emp in employees)
             {
+                // Если выбран поиск по ФИО
                 if (nameCheckBox.Checked)
                 {
                     if (emp.Name != nameBox.Text)
                         continue;
                 }
+                // Если выбран поиск по должности
                 if (positionCheckBox.Checked)
                 {
                     if (emp.Position != positionBox.Text)
                         continue;
                 }
+                // Если выбран поиск по возрасту
                 if (ageCheckBox.Checked)
                 {
                     if (emp.Age != ageBox.Value)

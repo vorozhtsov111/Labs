@@ -86,5 +86,25 @@ namespace UnitTests
             Assert.DoesNotThrow(
                 () => new HourlyPayEmployee("Васильев А.Я.", "Менеджер", 29, 100, 54));
         }
+
+        [Test]
+        public void MonthSalaryTest()
+        {
+            HourlyPayEmployee e = new HourlyPayEmployee("Васильев А.Я.", "Менеджер", 29,
+                100, 100);
+            Assert.AreEqual(10000, e.MonthSalary);
+            e.HourlyPay = 0;
+            e.Hours = 101;
+            Assert.AreEqual(0, e.MonthSalary);
+            e.HourlyPay = 101;
+            e.Hours = 0;
+            Assert.AreEqual(0, e.MonthSalary);
+            e.HourlyPay = 552.1;
+            e.Hours = 11;
+            Assert.AreEqual(6073.1, e.MonthSalary);
+            e.HourlyPay = 92.12;
+            e.Hours = 43.7;
+            Assert.AreEqual(4025.64, e.MonthSalary);
+        }
     }
 }

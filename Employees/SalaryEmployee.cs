@@ -68,6 +68,9 @@ namespace Employees
             }
         }
 
+        /// <summary>
+        /// Конструктор без параметров
+        /// </summary>
         private SalaryEmployee()
         {
 
